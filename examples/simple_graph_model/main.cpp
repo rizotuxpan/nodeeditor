@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 
     // Setup context menu for creating new nodes.
     view.setContextMenuPolicy(Qt::ActionsContextMenu);
-    QAction createNodeAction(QStringLiteral("Create Node"), &view);
+    QAction createNodeAction(QStringLiteral("Crear nodo"), &view);
     QObject::connect(&createNodeAction, &QAction::triggered, [&]() {
         // Mouse position in scene coordinates.
         QPointF posView = view.mapToScene(view.mapFromGlobal(QCursor::pos()));
@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
     });
     view.insertAction(view.actions().front(), &createNodeAction);
 
-    view.setWindowTitle("Simple Node Graph");
+    view.setWindowTitle("Topología");
     view.resize(800, 600);
 
     // Center window.
